@@ -9,20 +9,90 @@ Ubuntu Image releases for EBC7700 Series Single Board Computer.
 - Please ensure that the validated combination of the bootloader image and the Ubuntu image are flashed to the board. The release notes provide the version and validation details.
 - The latest images release is available [here](https://github.com/eswincomputing/ebc7700-sbc-ubuntu/releases/tag/2025.05.30).
 
+## Hardware preparation
+- One Type-C power cable (power the board)
+- One Micro USB cable (for serial port monitor and uboot command)
+- One USB flash driver that at least 16G (image source)
+- One SD card that at least 16G (boot device)
+
 ## Flashing images
-Copy the bootloader and Ubuntu image to an ext4/fat32 formatted USB disk, connect it to the **usb2.0** port of the sbc board, and enter the uboot command line mode through the serial port.
+Copy the bootloader and uncompressed Ubuntu image to an **ext4** formatted the USB flash driver
+
+For example
+```
+USB    /- bootloader_SBC-A1.bin
+        |- sbc-ubuntu-24.04-preinstalled-server-riscv64.img
+```
+connect the USB flash driver to the **usb2.0** port of the sbc board and connect the power cable and wait for the uboot shell through the serial port.
 
 ### Bootloader flashing
 
-If your device already has a compatible bootloader installed, you can skip this step.Please use fatload instead of ext4load if using fat32 USB disk.
-
-    #ext4load usb 0 0x90000000 bootloader.bin
-    #es_burn write 0x90000000 flash
-
+If your device already has a compatible bootloader installed, you can skip this step.
+```
+=> usb reset
+=> ls usb 0
+=> ext4load usb 0 0x90000000 bootloader_SBC-A1.bin
+=> es_burn write 0x90000000 flash
+```
+Demo output
+```
+=> usb reset
+resetting USB...
+Bus usb1@50490000: Register 2000140 NbrPorts 2
+Starting the controller
+USB XHCI 1.10
+scanning bus usb1@50490000 for devices... 3 USB Device(s) found
+       scanning usb for storage devices... 1 Storage Device(s) found
+=> ls usb 0
+<DIR>       4096 .
+<DIR>       4096 ..
+<DIR>      16384 lost+found
+      7633633280 sbc-ubuntu-24.04-preinstalled-server-riscv64.img
+         4392824 bootloader_SBC-A1.bin
+=> ext4load usb 0 0x90000000 bootloader_SBC-A1.bin
+4392824 bytes read in 545 ms (7.7 MiB/s)
+=> es_burn write 0x90000000 flash
+SF: 224 bytes @ 0x0 Read: OK
+FIRMWARE writing...
+Bootspi flash write protection disabled
+Erase progress: 100%:++++++++++++++++++++++++++++++++++++++++++++++++++
+SF: 2004 bytes @ 0x140000 Erased: OK
+Write progress: 100%:++++++++++++++++++++++++++++++++++++++++++++++++++
+SF: 0x7d4 bytes @ 0x140000 Written: OK
+Bootspi flash write protection enabled
+DDR writing...
+Bootspi flash write protection disabled
+Erase progress: 100%:++++++++++++++++++++++++++++++++++++++++++++++++++
+SF: 273064 bytes @ 0x40000 Erased: OK
+Write progress: 100%:++++++++++++++++++++++++++++++++++++++++++++++++++
+SF: 0x42aa8 bytes @ 0x40000 Written: OK
+Bootspi flash write protection enabled
+BOOTLOADER writing...
+Bootspi flash write protection disabled
+Erase progress: 100%:++++++++++++++++++++++++++++++++++++++++++++++++++
+SF: 4116952 bytes @ 0x1c0000 Erased: OK
+Write progress: 100%:++++++++++++++++++++++++++++++++++++++++++++++++++
+SF: 0x3ed1d8 bytes @ 0x1c0000 Written: OK
+Bootspi flash write protection enabled
+Bootspi flash write protection disabled
+Erase progress: 100%:++++++++++++++++++++++++++++++++++++++++++++++++++
+SF: 224 bytes @ 0x0 Erased: OK
+Write progress: 100%:++++++++++++++++++++++++++++++++++++++++++++++++++
+SF: 0xe0 bytes @ 0x0 Written: OK
+Bootspi flash write protection enabled
+bootloader write OK
+```
 ### Ubuntu image burning
-
-    #es_fs write usb 0 sbc-ubuntu-24.04-preinstalled-server-riscv64.img mmc 0
-    #reset
+Insert SD Card into EBC7700 then enter the following command (it might takes 20 minutes depends on SD card performance)
+```
+=> es_fs write usb 0 sbc-ubuntu-24.04-preinstalled-server-riscv64.img mmc 0
+=> reset
+```
+Demo output
+```
+=> es_fs write usb 0 sbc-ubuntu-24.04-preinstalled-server-riscv64.img mmc 0
+Write progress:  87%:+++++++++++++++++++++++++++++++++++++++++++
+```
 
 ## Login to the board Using Serial Console
 
