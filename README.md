@@ -84,7 +84,7 @@ bootloader write OK
 ```
 
 :::warning
-If you are using a bootchain version prior to **2025.06.30**, you need to upgrade to bootchain version **2025.06.30 or later**. You cannot directly use the **es_burn** command to flash the bootchain; instead, you must flash it following the **RECOVER BOOTLOADER** method. Refer to Section 6.1.1 of the document "EBC77 Series Single Board Computer user guide_EN.pdf" [here](https://github.com/eswincomputing/ebc7700-sbc-ubuntu/releases/tag/2025.06.30).
+If you are using a bootchain version prior to **2025.06.30**, you need to upgrade to bootchain version **2025.06.30 or later**. You cannot directly use the `es_burn` command to flash the bootchain; instead, you must flash it following the `RECOVER BOOTLOADER` method. Refer to Section 6.1.1 of the document `EBC77 Series Single Board Computer user guide_EN.pdf` [here](https://github.com/eswincomputing/ebc7700-sbc-ubuntu/releases/tag/2025.06.30).
 :::
 
 ### Ubuntu image burning
@@ -98,6 +98,13 @@ Demo output
 => es_fs write usb 0 sbc-ubuntu-24.04-preinstalled-server-riscv64.img mmc 0
 Write progress:  87%:+++++++++++++++++++++++++++++++++++++++++++
 ```
+
+### Essdk deb packeges install
+If you find that installing essdk deb packages using `apt install` is too slow, you can download the essdk and ffmpeg deb packages from essdk_ffmpeg_0630.zip [here](https://github.com/eswincomputing/ebc7700-sbc-ubuntu/releases/tag/2025.06.30) and install them by `dpkg -i XXXX.deb`.
+
+## Download from network disk
+If you are unable to download images from GitHub and you are in China, you can try downloading them from [here](https://pan.baidu.com/s/1rEGtF6EHxEsgH5l61v-uPA?pwd=c7rn).
+
 
 ## Login to the board Using Serial Console
 
