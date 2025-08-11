@@ -25,7 +25,7 @@ USB    /- bootloader_SBC-A1.bin
 ```
 connect the USB flash driver to the **usb2.0** port of the sbc board and connect the power cable and wait for the uboot shell through the serial port.
 
-### Bootchain flashing
+### Bootloader flashing
 
 If your device already has a compatible bootloader installed, you can skip this step.
 ```
@@ -84,7 +84,7 @@ bootloader write OK
 ```
 
 :::warning
-If you are using a bootchain version prior to **2025.06.30**, you need to upgrade to bootchain version **2025.06.30 or later**. You cannot directly use the `es_burn` command to flash the bootchain; instead, you must flash it following the `RECOVER BOOTLOADER` method. Refer to Section 6.1.1 of the document `EBC77_Series_Single_Board_Computer_UG_EN.pdf` [here](https://github.com/eswincomputing/ebc7700-sbc-ubuntu/releases/tag/2025.06.30).
+If you are using a bootloader version prior to `2025.06.30` and want to  upgrade to bootloader version `2025.06.30` or later, you cannot directly use the `es_burn` command to flash the bootloader; instead, you must flash it following the `RECOVER BOOTLOADER` method. Refer to Section 6.1.1 of the document `EBC77_Series_Single_Board_Computer_UG_EN.pdf` [here](https://github.com/eswincomputing/ebc7700-sbc-ubuntu/releases/tag/2025.06.30).
 :::
 
 ### Ubuntu image burning
