@@ -6,8 +6,8 @@ Ubuntu Releases for EBC7700 Series Single Board Computer.
 Ubuntu Image releases for EBC7700 Series Single Board Computer.
 - Based on Ubuntu 24.04.2 LTS.
 - Prebuilt Ubuntu image in compressed format named `sbc-ubuntu-24.04-preinstalled-server-riscv64.img.zst`.
-- Please ensure that the validated combination of the bootloader image and the Ubuntu image are flashed to the board. The release notes provide the version and validation details.
-- The latest images release is available [here](https://github.com/eswincomputing/ebc7700-sbc-ubuntu/releases/tag/2025.05.30).
+- Please ensure that the validated combination of the bootchain image and the Ubuntu image are flashed to the board. The release notes provide the version and validation details.
+- The latest images and user guide document release is available [here](https://github.com/eswincomputing/ebc7700-sbc-ubuntu/releases/tag/2025.06.30).
 
 ## Hardware preparation
 - One Type-C power cable (power the board)
@@ -25,7 +25,7 @@ USB    /- bootloader_SBC-A1.bin
 ```
 connect the USB flash driver to the **usb2.0** port of the sbc board and connect the power cable and wait for the uboot shell through the serial port.
 
-### Bootloader flashing
+### Bootchain flashing
 
 If your device already has a compatible bootloader installed, you can skip this step.
 ```
@@ -82,6 +82,11 @@ SF: 0xe0 bytes @ 0x0 Written: OK
 Bootspi flash write protection enabled
 bootloader write OK
 ```
+
+:::warning
+If you are using a bootchain version prior to **2025.06.30**, you need to upgrade to bootchain version **2025.06.30 or later**. You cannot directly use the **es_burn** command to flash the bootchain; instead, you must flash it following the **RECOVER BOOTLOADER** method. Refer to Section 6.1.1 of the document "EBC77 Series Single Board Computer user guide_EN.pdf" [here](https://github.com/eswincomputing/ebc7700-sbc-ubuntu/releases/tag/2025.06.30).
+:::
+
 ### Ubuntu image burning
 Insert SD Card into EBC7700 then enter the following command (it might takes 20 minutes depends on SD card performance)
 ```
