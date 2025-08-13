@@ -6,8 +6,8 @@ Ubuntu Releases for EBC7700 Series Single Board Computer.
 Ubuntu Image releases for EBC7700 Series Single Board Computer.
 - Based on Ubuntu 24.04.2 LTS.
 - Prebuilt Ubuntu image in compressed format named `sbc-ubuntu-24.04-preinstalled-server-riscv64.img.zst`.
-- Please ensure that the validated combination of the bootchain image and the Ubuntu image are flashed to the board. The release notes provide the version and validation details.
-- The latest images and documents release is available [here](https://github.com/eswincomputing/ebc7700-sbc-ubuntu/releases/tag/2025.06.30).
+- Please ensure that the validated combination of the bootchain image and the Ubuntu image are flashed to the board.
+- The latest images release is available [here](https://github.com/eswincomputing/ebc7700-sbc-ubuntu/releases/tag/2025.06.30).
 
 ## Hardware preparation
 - One Type-C power cable (power the board)
@@ -84,7 +84,7 @@ bootloader write OK
 ```
 
 :::warning
-If you are using a bootloader version prior to `2025.06.30` and want to  upgrade to bootloader version `2025.06.30` or later, you cannot directly use the `es_burn` command to flash the bootloader; instead, you must flash it following the `RECOVER BOOTLOADER` method. Refer to Section 6.1.1 of the document `EBC77_Series_Single_Board_Computer_UG_EN.pdf` [here](https://github.com/eswincomputing/ebc7700-sbc-ubuntu/releases/tag/2025.06.30).
+If you are using a bootloader version prior to `2025.06.30` and want to  upgrade to bootloader version `2025.06.30` or later, you cannot directly use the `es_burn` command to flash the bootloader; instead, you must flash it following the `RECOVER BOOTLOADER` method. Refer to Section 6.1.1 of the document `EBC77_Series_Single_Board_Computer_UG_EN.pdf` in documents directory.
 :::
 
 ### Ubuntu image burning
