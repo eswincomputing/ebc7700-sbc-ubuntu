@@ -152,5 +152,6 @@ In addition, if you want to switch back to HDMI, the user needs to operate the f
 - change property num_lanes = <2> under mipi_csi2_x node 
 - change properties lanes = <1 2> and lanes-dp-dn = <0 0> under csi2_dphy_hw node
 - change properties data-lanes = <1 2> and link-frequencies = <456000000> under imx219_x node
+
 You can adapt other sensors based on this ​​imx219 dts​​.
 
