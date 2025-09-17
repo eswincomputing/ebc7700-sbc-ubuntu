@@ -7,7 +7,7 @@ Ubuntu Image releases for EBC7700 Series Single Board Computer.
 - Based on Ubuntu 24.04.2 LTS.
 - Prebuilt Ubuntu image in compressed format named `sbc-ubuntu-24.04-preinstalled-server-riscv64.img.zst`.
 - Please ensure that the validated combination of the bootchain image and the Ubuntu image are flashed to the board.
-- The latest images release is available [here](https://github.com/eswincomputing/ebc7700-sbc-ubuntu/releases/tag/2025.06.30).
+- The latest images release is available [here](https://github.com/eswincomputing/ebc7700-sbc-ubuntu/releases/tag/2025.0730).
 
 ## Hardware preparation
 - One Type-C power cable (power the board)
@@ -100,7 +100,7 @@ Write progress:  87%:+++++++++++++++++++++++++++++++++++++++++++
 ```
 
 ### Essdk deb packeges install
-If you find that installing essdk deb packages using `apt install` is too slow, you can download the essdk and ffmpeg deb packages from essdk_ffmpeg_0630.zip [here](https://github.com/eswincomputing/ebc7700-sbc-ubuntu/releases/tag/2025.06.30) and install them by `dpkg -i XXXX.deb`.
+If you find that installing essdk deb packages using `apt install` is too slow, you can download the essdk and ffmpeg deb packages from essdk_ffmpeg_0630.zip [here](https://github.com/eswincomputing/ebc7700-sbc-ubuntu/releases/tag/2025.0730) and install them by `dpkg -i XXXX.deb`.
 
 ## Download from network disk
 If you are unable to download images from GitHub and you are in China, you can try downloading them from [here](https://pan.baidu.com/s/1rEGtF6EHxEsgH5l61v-uPA?pwd=c7rn).
