@@ -5,9 +5,9 @@ Ubuntu Releases for EBC7700 Series Single Board Computer.
 
 Ubuntu Image releases for EBC7700 Series Single Board Computer.
 - Based on Ubuntu 24.04.2 LTS.
-- Prebuilt Ubuntu image in compressed format named `sbc-ubuntu-24.04-preinstalled-server-riscv64.img.zst`.
+- Prebuilt Ubuntu image in compressed format named `sbc-ubuntu-24.04-preinstalled-server-riscv64_20251211_0111_41.img.zst`.
 - Please ensure that the validated combination of the bootchain image and the Ubuntu image are flashed to the board.
-- The latest images release is available [here](https://github.com/eswincomputing/ebc7700-sbc-ubuntu/releases/tag/2025.0730).
+- The latest images release is available [here](https://github.com/eswincomputing/ebc7700-sbc-ubuntu/releases/tag/2025.10.30).
 
 ## Hardware preparation
 - One Type-C power cable (power the board)
@@ -21,7 +21,7 @@ Copy the bootloader and uncompressed Ubuntu image to an **ext4** formatted the U
 For example
 ```
 USB    /- bootloader_SBC-A1.bin
-        |- sbc-ubuntu-24.04-preinstalled-server-riscv64.img
+        |- sbc-ubuntu-24.04-preinstalled-server-riscv64_20251211_0111_41.img
 ```
 connect the USB flash driver to the **usb2.0** port of the sbc board and connect the power cable and wait for the uboot shell through the serial port.
 
@@ -47,10 +47,10 @@ scanning bus usb1@50490000 for devices... 3 USB Device(s) found
 <DIR>       4096 .
 <DIR>       4096 ..
 <DIR>      16384 lost+found
-      7633633280 sbc-ubuntu-24.04-preinstalled-server-riscv64.img
-         4392824 bootloader_SBC-A1.bin
+      8475899392 sbc-ubuntu-24.04-preinstalled-server-riscv64_20251211_0111_41.img
+         4782248 bootloader_SBC-A1.bin
 => ext4load usb 0 0x90000000 bootloader_SBC-A1.bin
-4392824 bytes read in 545 ms (7.7 MiB/s)
+4782248 bytes read in 545 ms (7.7 MiB/s)
 => es_burn write 0x90000000 flash
 SF: 224 bytes @ 0x0 Read: OK
 FIRMWARE writing...
@@ -89,20 +89,20 @@ If you are using a bootloader version prior to `2025.06.30` and want to  upgrade
 ### Ubuntu image burning
 Insert SD Card into EBC7700 then enter the following command (it might takes 20 minutes depends on SD card performance)
 ```
-=> es_fs write usb 0 sbc-ubuntu-24.04-preinstalled-server-riscv64.img mmc 0
+=> es_fs write usb 0 sbc-ubuntu-24.04-preinstalled-server-riscv64_20251211_0111_41.img mmc 0
 => reset
 ```
 Demo output
 ```
-=> es_fs write usb 0 sbc-ubuntu-24.04-preinstalled-server-riscv64.img mmc 0
+=> es_fs write usb 0 sbc-ubuntu-24.04-preinstalled-server-riscv64_20251211_0111_41.img mmc 0
 Write progress:  87%:+++++++++++++++++++++++++++++++++++++++++++
 ```
 
 ### Essdk deb packeges install
-If you find that installing essdk deb packages using `apt install` is too slow, you can download the essdk and ffmpeg deb packages from essdk_ffmpeg_0630.zip [here](https://github.com/eswincomputing/ebc7700-sbc-ubuntu/releases/tag/2025.0730) and install them by `dpkg -i XXXX.deb`.
+If you find that installing essdk deb packages using `apt install` is too slow, you can download the essdk and ffmpeg deb packages from essdk_ffmpeg_251030.zip [here](https://github.com/eswincomputing/ebc7700-sbc-ubuntu/releases/tag/2025.10.30) and install them by `dpkg -i XXXX.deb`.
 
 ## Download from network disk
-If you are unable to download images from GitHub and you are in China, you can try downloading them [here](https://pan.baidu.com/s/1SL-peBYUcQypXETvam-qCw?pwd=sg94).
+If you are unable to download images from GitHub and you are in China, you can try downloading them [here](https://pan.baidu.com/s/1Gb-byFiH3-IZeW0jE2lckQ?pwd=2xti).
 
 ## Login to the board Using Serial Console
 
