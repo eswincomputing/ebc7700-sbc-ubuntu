@@ -1,5 +1,6 @@
 # EBC7700-SBC-Ubuntu
-Ubuntu Releases for EBC7700 Series Single Board Computer.
+- Ubuntu Releases for EBC7700 Series Single Board Computer.
+- Pitch video [here](https://www.eswincomputing.com/community/api/uploads/2026/01/06/1767689438e0a2941706b284dd.mp4).
 
 ## Description
 
