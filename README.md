@@ -103,7 +103,7 @@ Write progress:  87%:+++++++++++++++++++++++++++++++++++++++++++
 If you find that installing essdk deb packages using `apt install` is too slow, you can download the essdk and ffmpeg deb packages from essdk_ffmpeg_251230.zip [here](https://github.com/eswincomputing/ebc7700-sbc-ubuntu/releases/edit/2025.12.30) and install them by `dpkg -i XXXX.deb`.
 
 ## Download from network disk
-If you are unable to download images from GitHub and you are in China, you can try downloading them [here](https://pan.baidu.com/s/1Gb-byFiH3-IZeW0jE2lckQ?pwd=2xti).
+If you are unable to download images from GitHub and you are in China, you can try downloading them [here](https://pan.baidu.com/s/1UKcUUYrYutWIY0CIpNay9g?pwd=8u2m).
 
 ## Login to the board Using Serial Console
 
